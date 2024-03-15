@@ -1,0 +1,1539 @@
+Program.Sub.ScreenSU.Start
+Gui.fmGSTRpt..Create
+Gui.fmGSTRpt..Caption("GST Report Summary")
+Gui.fmGSTRpt..Size(20295,11550)
+Gui.fmGSTRpt..MinX(0)
+Gui.fmGSTRpt..MinY(0)
+Gui.fmGSTRpt..Position(0,0)
+Gui.fmGSTRpt..BackColor(-2147483633)
+Gui.fmGSTRpt..MousePointer(0)
+Gui.fmGSTRpt..Event(UnLoad,UnLoad)
+Gui.fmGSTRpt.lblYr.Create(Label,"YEAR",True,585,255,0,75,180,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblYr.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.lblMonth.Create(Label,"MONTH",True,720,255,0,2325,180,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblMonth.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.cboYr.Create(ComboBox)
+Gui.fmGSTRpt.cboYr.Size(1515,330)
+Gui.fmGSTRpt.cboYr.Position(690,75)
+Gui.fmGSTRpt.cboMonth.Create(ComboBox)
+Gui.fmGSTRpt.cboMonth.Size(1095,330)
+Gui.fmGSTRpt.cboMonth.Position(3090,75)
+Gui.fmGSTRpt.tabMain.Create(Tab)
+Gui.fmGSTRpt.tabMain.Size(19920,9525)
+Gui.fmGSTRpt.tabMain.Position(75,1395)
+Gui.fmGSTRpt.tabMain.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.tabMain.Tabs(2)
+Gui.fmGSTRpt.tabMain.SetTab(0)
+Gui.fmGSTRpt.tabMain.Caption("INPUT")
+Gui.fmGSTRpt.tabMain.SetTab(1)
+Gui.fmGSTRpt.tabMain.Caption("OUTPUT")
+Gui.fmGSTRpt.GsGridIn.Create(GsGridControl)
+Gui.fmGSTRpt.GsGridIn.Size(19785,9045)
+Gui.fmGSTRpt.GsGridIn.Position(0,0)
+Gui.fmGSTRpt.GsGridIn.Parent("tabMain",0)
+Gui.fmGSTRpt.GsGridOut.Create(GsGridControl)
+Gui.fmGSTRpt.GsGridOut.Size(19785,9045)
+Gui.fmGSTRpt.GsGridOut.Position(0,0)
+Gui.fmGSTRpt.GsGridOut.Parent("tabMain",1)
+Gui.fmGSTRpt.frameSum.Create(Frame)
+Gui.fmGSTRpt.frameSum.Size(8670,1275)
+Gui.fmGSTRpt.frameSum.Position(11325,120)
+Gui.fmGSTRpt.frameSum.Caption("SUMMARY")
+Gui.fmGSTRpt.frameSum.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.lblSR.Create(Label,"Sales Records:",True,1635,255,0,4875,270,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblSR.Parent("frameSum")
+Gui.fmGSTRpt.lblSR.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.lblSV.Create(Label,"Total Sales Value:",True,1635,255,0,4875,600,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblSV.Parent("frameSum")
+Gui.fmGSTRpt.lblSV.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.lblSGST.Create(Label,"Total Sales GST:",True,1635,255,0,4875,930,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblSGST.Parent("frameSum")
+Gui.fmGSTRpt.lblSGST.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.txtSV.Create(TextBox,"",True,2055,300,0,6525,510,False,0,"Arial",8,-2147483643,1)
+Gui.fmGSTRpt.txtSV.Parent("frameSum")
+Gui.fmGSTRpt.txtSV.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.txtSGST.Create(TextBox,"",True,2055,300,0,6525,840,False,0,"Arial",8,-2147483643,1)
+Gui.fmGSTRpt.txtSGST.Parent("frameSum")
+Gui.fmGSTRpt.txtSGST.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.txtSR.Create(TextBox,"",True,2055,300,0,6525,180,False,0,"Arial",8,-2147483643,1)
+Gui.fmGSTRpt.txtSR.Parent("frameSum")
+Gui.fmGSTRpt.txtSR.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.txtPGST.Create(TextBox,"",True,2055,300,0,2775,840,False,0,"Arial",8,-2147483643,1)
+Gui.fmGSTRpt.txtPGST.Parent("frameSum")
+Gui.fmGSTRpt.txtPGST.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.lblPGST.Create(Label,"Total Purchase GST:",True,1935,255,0,825,930,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblPGST.Parent("frameSum")
+Gui.fmGSTRpt.lblPGST.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.lblPV.Create(Label,"Total Purchase Value:",True,1935,255,0,825,600,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblPV.Parent("frameSum")
+Gui.fmGSTRpt.lblPV.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.txtPV.Create(TextBox,"",True,2055,300,0,2775,510,False,0,"Arial",8,-2147483643,1)
+Gui.fmGSTRpt.txtPV.Parent("frameSum")
+Gui.fmGSTRpt.txtPV.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.txtPR.Create(TextBox,"",True,2055,300,0,2775,180,False,0,"Arial",8,-2147483643,1)
+Gui.fmGSTRpt.txtPR.Parent("frameSum")
+Gui.fmGSTRpt.txtPR.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.lblPR.Create(Label,"Purchase Records:",True,1935,255,0,825,270,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblPR.Parent("frameSum")
+Gui.fmGSTRpt.lblPR.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.cmdRefresh.Create(Button)
+Gui.fmGSTRpt.cmdRefresh.Size(1905,420)
+Gui.fmGSTRpt.cmdRefresh.Position(4470,525)
+Gui.fmGSTRpt.cmdRefresh.Caption("REFRESH")
+Gui.fmGSTRpt.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.fmGSTRpt.cmdRefresh.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.cboZone.Create(ComboBox)
+Gui.fmGSTRpt.cboZone.Size(1095,330)
+Gui.fmGSTRpt.cboZone.Position(5280,75)
+Gui.fmGSTRpt.cboZone.FontStyle(True,False,False,False,False)
+Gui.fmGSTRpt.lblZone.Create(Label,"TAX ZONE",True,915,255,0,4305,180,True,0,"Arial",8,-2147483633,0)
+Gui.fmGSTRpt.lblZone.FontStyle(True,False,False,False,False)
+Gui.fmMX..Create
+Gui.fmMX..Caption("GST Zone Maintenance")
+Gui.fmMX..Size(12765,6585)
+Gui.fmMX..MinX(0)
+Gui.fmMX..MinY(0)
+Gui.fmMX..Position(0,0)
+Gui.fmMX..BackColor(-2147483633)
+Gui.fmMX..MousePointer(0)
+Gui.fmMX..Event(UnLoad,UnLoad)
+Gui.fmMX.lblZn.Create(Label,"Zone",True,750,255,0,105,105,True,0,"Arial",8,-2147483633,0)
+Gui.fmMX.lblZn.FontStyle(True,False,False,False,False)
+Gui.fmMX.txtZn.Create(TextBox,"",True,1215,300,0,90,300,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtZn.TabStop(True)
+Gui.fmMX.txtZn.TabIndex(1)
+Gui.fmMX.lblAuth.Create(Label,"Authority",True,915,255,0,1395,105,True,0,"Arial",8,-2147483633,0)
+Gui.fmMX.lblAuth.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblGLAcct.Create(Label,"GL Account",True,1935,255,0,6330,105,True,0,"Arial",8,-2147483633,0)
+Gui.fmMX.lblGLAcct.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblGLAcct.DefaultValue("")
+Gui.fmMX.lblDesc.Create(Label,"Description",True,1935,255,0,2685,105,True,0,"Arial",8,-2147483633,0)
+Gui.fmMX.lblDesc.FontStyle(True,False,False,False,False)
+Gui.fmMX.txtAuth.Create(TextBox,"",True,1215,300,0,1395,300,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtAuth.TabStop(True)
+Gui.fmMX.txtAuth.TabIndex(2)
+Gui.fmMX.txtGLAcct.Create(TextBox,"",True,1215,300,0,6330,300,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtGLAcct.TabStop(True)
+Gui.fmMX.txtGLAcct.TabIndex(4)
+Gui.fmMX.txtDesc.Create(TextBox,"",True,3600,300,0,2685,300,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtDesc.TabStop(True)
+Gui.fmMX.txtDesc.TabIndex(3)
+Gui.fmMX.cmdSV.Create(Button)
+Gui.fmMX.cmdSV.Size(1185,375)
+Gui.fmMX.cmdSV.Position(10020,270)
+Gui.fmMX.cmdSV.Caption("Add/Update")
+Gui.fmMX.cmdSV.Event(Click,cmdSV_Click)
+Gui.fmMX.cmdSV.TabStop(True)
+Gui.fmMX.cmdSV.TabIndex(7)
+Gui.fmMX.cmdDel.Create(Button)
+Gui.fmMX.cmdDel.Size(1185,375)
+Gui.fmMX.cmdDel.Position(11235,270)
+Gui.fmMX.cmdDel.Caption("Delete")
+Gui.fmMX.cmdDel.Event(Click,cmdDel_Click)
+Gui.fmMX.cmdDel.TabStop(True)
+Gui.fmMX.cmdDel.TabIndex(8)
+Gui.fmMX.GsGcMX.Create(GsGridControl)
+Gui.fmMX.GsGcMX.Size(12315,5085)
+Gui.fmMX.GsGcMX.Position(90,810)
+Gui.fmMX.GsGcMX.Event(RowCellClick,GsGcMX_RowCellClick)
+Gui.fmMX.GsGcMX.TabStop(True)
+Gui.fmMX.GsGcMX.TabIndex(9)
+Gui.fmMX.frmChoice.Create(Frame)
+Gui.fmMX.frmChoice.Size(2355,495)
+Gui.fmMX.frmChoice.Position(7605,150)
+Gui.fmMX.frmChoice.BorderStyle(0)
+Gui.fmMX.chkIn.Create(CheckBox)
+Gui.fmMX.chkIn.Size(960,360)
+Gui.fmMX.chkIn.Position(60,120)
+Gui.fmMX.chkIn.Parent("frmChoice")
+Gui.fmMX.chkIn.Caption("Input")
+Gui.fmMX.chkIn.FontStyle(True,False,False,False,False)
+Gui.fmMX.chkIn.Event(Click,ChkBox)
+Gui.fmMX.chkIn.TabStop(True)
+Gui.fmMX.chkIn.TabIndex(5)
+Gui.fmMX.chkOut.Create(CheckBox)
+Gui.fmMX.chkOut.Size(1020,360)
+Gui.fmMX.chkOut.Position(1230,120)
+Gui.fmMX.chkOut.Parent("frmChoice")
+Gui.fmMX.chkOut.Caption("Output")
+Gui.fmMX.chkOut.FontStyle(True,False,False,False,False)
+Gui.fmMX.chkOut.Event(Click,ChkBox)
+Gui.fmMX.chkOut.TabStop(True)
+Gui.fmMX.chkOut.TabIndex(6)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.dBegDate.Declare(Date)
+V.Global.dEndDate.Declare(Date)
+V.Global.iRev.Declare
+V.Global.sAccrGL.Declare
+V.Global.sAPGL.Declare
+V.Global.sCoCurr.Declare
+V.Global.sCountry.Declare
+V.Global.sTaxCode.Declare
+V.Global.sVATIn.Declare
+V.Global.sVATOut.Declare
+V.Global.bFirstRun.Declare(Boolean,True)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+V.Local.dLastMonth.Declare(Date)
+V.Local.iCnt.Declare
+V.Local.sLocation.Declare
+'V.Local.sTEMP.Declare(String,"MX")
+
+'TJS Apr 2020
+'Customer: Verantis Corporation
+
+'BUSINESS CASE: The customer is using ARC Project 5241 to run their GST tax reports. They need to add some additional tax codes to use in this report.
+'Due to the way 5241 was written as hardcoded with the zones and authorities, this project is a rewrite based off the work originally done in 5241.
+
+F.Intrinsic.Control.If(V.Caller.Switches,=,"MX")
+	F.Intrinsic.Control.CallSub(SetIcon)
+	F.Intrinsic.Control.CallSub(MX)
+'F.Intrinsic.Control.If(V.Local.sTEMP,=,"MX")
+'	F.Intrinsic.Control.CallSub(SetIcon)
+'	F.Intrinsic.Control.CallSub(MX)
+F.Intrinsic.Control.Else
+	F.ODBC.Connection!conts.OpenCompanyConnection
+	
+	F.ODBC.Connection!conts.OpenLocalRecordsetRO("rstCur","SELECT CURRENCY FROM V_COMPANY_OPT")
+	V.Global.sCoCurr.Set(V.ODBC.conts!rstCur.FieldValTrim!CURRENCY)
+	F.ODBC.conts!rstCur.Close
+	
+	'Set the month in dropdownlist
+	F.Intrinsic.Control.For(V.Local.iCnt,1,12,1)
+		Gui.fmGSTRpt.cboMonth.AddItem(V.Local.iCnt)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.Date.DateAdd("M",-1,V.Ambient.Date,V.Local.dLastMonth)
+	F.Intrinsic.Date.Month(V.Local.dLastMonth,V.Local.iCnt)
+	Gui.fmGSTRpt.cboMonth.Text(V.Local.iCnt)
+	
+	'Set the year in dropdownlist
+	F.Data.Dictionary.CreateFromSQL("dictYear","conts","SELECT DISTINCT(START_YEAR), START_YEAR FROM GL_CALENDAR ORDER BY START_YEAR",4)
+	Gui.fmGSTRpt.cboYr.AddItems("Dictionary","dictYear")
+	F.Data.Dictionary.Close("dictYear")
+	F.Intrinsic.Date.Year(V.Local.dLastMonth,V.Local.iCnt)
+	Gui.fmGSTRpt.cboYr.Text(V.Local.iCnt)
+	
+	'Set the Zone Dropdown List
+	F.Data.Dictionary.CreateFromSQL("dictZone","conts","select distinct(ZONE), ZONE from V_AR_TAX_TABLES order by ZONE",4)
+	Gui.fmGSTRpt.cboZone.AddItems("Dictionary","dictZone")
+	F.Data.Dictionary.Close("dictZone")
+	F.Intrinsic.String.Left(V.Global.sCoCurr,2,V.Local.sLocation)
+	Gui.fmGSTRpt.cboZone.Text(V.Local.sLocation)
+	
+	F.ODBC.Connection!conts.Close
+	
+	F.Intrinsic.Control.CallSub(DataSetup)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.DataSetup.Start
+F.Intrinsic.Control.Try
+V.Local.iMonth.Declare
+V.Local.iYear.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sZone.Declare
+V.Local.sGLAccountsIn.Declare
+V.Local.sGLAccountsOut.Declare
+
+V.Local.sZone.Set(V.Screen.fmGSTRpt!cboZone.Text)
+V.Local.iMonth.Set(V.Screen.fmGSTRpt!cboMonth.Text)
+V.Local.iYear.Set(V.Screen.fmGSTRpt!cboYr.Text)
+F.Intrinsic.String.LPad(V.Local.iMonth,"0",2,V.Local.sRet)
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Intrinsic.String.Build("select BEG_DATE, END_DATE from V_GL_CALENDAR where START_YEAR = '{0}' and PERIOD = '{1}'",V.Local.iYear,V.Local.sRet,V.Local.sSQL)
+F.ODBC.Connection!conts.OpenLocalRecordsetRO("rstCal",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.conts!rstCal.EOF)
+	F.Intrinsic.UI.Msgbox("GL period has not been setup")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.Else
+	V.Global.dBegDate.Set(V.ODBC.conts!rstCal.FieldVal!beg_date)
+	V.Global.dEndDate.Set(V.ODBC.conts!rstCal.FieldVal!end_date)
+F.Intrinsic.Control.EndIf
+F.ODBC.conts!rstCal.Close
+
+F.Intrinsic.Control.If(V.DataTable.dtGST.Exists)
+	F.Data.DataTable.Close("dtGST")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtCust.Exists)
+	F.Data.DataTable.Close("dtCust")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtVen.Exists)
+	F.Data.DataTable.Close("dtVen")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtTax.Exists)
+	F.Data.DataTable.Close("dtTax")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtSalesGL.Exists)
+	F.Data.DataTable.Close("dtSalesGL")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtPurch.Exists)
+	F.Data.DataTable.Close("dtPurch")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtSales.Exists)
+	F.Data.DataTable.Close("dtSales")
+F.Intrinsic.Control.EndIf
+
+'Get all tax codes for the zone selected
+'F.Intrinsic.String.Build("Select ZONE,AUTH,DESCR from GCG_5949_GST_ACCTS where ZONE = '{0}'",V.Local.sZone.Trim,V.Local.sSQL)
+F.Intrinsic.String.Build("Select ZONE,AUTH,DESCR from V_AR_TAX_TABLES","",V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtGST","conts",V.Local.sSQL,True)
+
+'Collect list of Input GL Accounts
+F.Intrinsic.String.Build("Select DISTINCT(RTRIM(GL_ACCT)) as GLACCT from GCG_5949_GST_ACCTS where ZONE = '{0}' and INPUT = 1",V.Local.sZone.Trim,V.Local.sGLAccountsIn)
+F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sGLAccountsIn,V.Local.sGLAccountsIn)
+F.Intrinsic.String.Replace(V.Local.sGLAccountsIn,"#$#","','",V.Local.sGLAccountsIn)
+F.Intrinsic.String.Build("('{0}')",V.Local.sGLAccountsIn,V.Local.sGLAccountsIn)
+
+'Collect list of Output GL Accounts
+F.Intrinsic.String.Build("Select DISTINCT(RTRIM(GL_ACCT)) as GLACCT from GCG_5949_GST_ACCTS where ZONE = '{0}' and OUTPUT = 1",V.Local.sZone.Trim,V.Local.sGLAccountsOut)	
+F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sGLAccountsOut,V.Local.sGLAccountsOut)
+F.Intrinsic.String.Replace(V.Local.sGLAccountsOut,"#$#","','",V.Local.sGLAccountsOut)
+F.Intrinsic.String.Build("('{0}')",V.Local.sGLAccountsOut,V.Local.sGLAccountsOut)
+
+'Retrieve customer master and vendor master
+F.Data.DataTable.CreateFromSQL("dtCust","conts","SELECT C1.CUSTOMER AS 'CUSTOMER', C1.NAME_CUSTOMER AS 'NAME', C2.ORDER_CURR AS 'CURRENCY', C1.COUNTRY AS 'COUNTRY', C3.REGSTR_NO AS 'ID' FROM (V_CUSTOMER_MASTER C1 LEFT JOIN V_CUSTOMER_INTL C2 ON C1.CUSTOMER = C2.CUSTOMER) LEFT JOIN V_CUSTOMER_VAT C3 ON C3.CUST = C1.CUSTOMER",True)
+F.Data.DataTable.CreateFromSQL("dtVen","conts","SELECT V1.VENDOR AS 'VENDOR', V1.NAME_VENDOR AS 'NAME', V2.DEFAULT_CURRENCY AS 'CURRENCY', V3.VAT_REGSTR_NO AS 'ID', V1.CODE_SORT AS SUPPLIERID FROM (V_VENDOR_MASTER V1 LEFT JOIN V_VENDOR_INTL V2 ON V1.VENDOR = V2.VENDOR) LEFT JOIN V_VAT_VEND_TAX V3 ON V1.VENDOR = V3.VENDOR_ID",True)
+
+'Retrieve AR Tax Tables
+F.Data.DataTable.CreateFromSQL("dtTax","conts","SELECT RTRIM(ZONE+AUTH) AS 'TAX_CODE', DESCR AS 'DESC' FROM V_AR_TAX_TABLES",True)
+
+'Retrieve all sales account from product lines
+F.Data.DataTable.CreateFromSQL("dtSalesGL","conts","SELECT DISTINCT(SALES_ACCOUNT) AS ACCOUNT FROM V_PRODUCT_LINE WHERE SALES_ACCOUNT <> ''",True)
+
+'Prepare datatable for purchase
+F.Data.DataTable.Create("dtPurch",True)
+F.Data.DataTable.AddColumn("dtPurch","Tax_Code","String")
+F.Data.DataTable.AddColumn("dtPurch","Invoice_No","String")
+F.Data.DataTable.AddColumn("dtPurch","Invoice_Date","Date")
+F.Data.DataTable.AddColumn("dtPurch","Supplier_Name","String")
+F.Data.DataTable.AddColumn("dtPurch","Product_Desc","String")
+F.Data.DataTable.AddColumn("dtPurch","Purch_Value_Base","Float")
+F.Data.DataTable.AddColumn("dtPurch","Purch_GST_Base","Float")
+F.Data.DataTable.AddColumn("dtPurch","FCC","String")
+F.Data.DataTable.AddColumn("dtPurch","Purch_Value_FCC","Float")
+F.Data.DataTable.AddColumn("dtPurch","Purch_GST_FCC","Float")
+F.Data.DataTable.AddColumn("dtPurch","Batch_Num","String")
+F.Data.DataTable.AddColumn("dtPurch","Batch_Line","String")
+F.Data.DataTable.AddColumn("dtPurch","Supplier_ID","String")
+F.Data.DataTable.AddColumn("dtPurch","Invoice_Line","String")
+F.Data.DataTable.AddColumn("dtPurch","Import_Decl_No","String")
+
+'Prepare datatable for sales
+F.Data.DataTable.Create("dtSales",True)
+F.Data.DataTable.AddColumn("dtSales","Tax_Code","String")
+F.Data.DataTable.AddColumn("dtSales","Invoice_No","String")
+F.Data.DataTable.AddColumn("dtSales","Invoice_Date","Date")
+F.Data.DataTable.AddColumn("dtSales","Customer_Name","String")
+F.Data.DataTable.AddColumn("dtSales","Product_Desc","String")
+F.Data.DataTable.AddColumn("dtSales","Sales_Value_Base","Float")
+F.Data.DataTable.AddColumn("dtSales","Sales_GST_Base","Float")
+F.Data.DataTable.AddColumn("dtSales","FCC","String")
+F.Data.DataTable.AddColumn("dtSales","Sales_Value_FCC","Float")
+F.Data.DataTable.AddColumn("dtSales","Sales_GST_FCC","Float")
+F.Data.DataTable.AddColumn("dtSales","Batch_Num","String")
+F.Data.DataTable.AddColumn("dtSales","Batch_Line","String")
+F.Data.DataTable.AddColumn("dtSales","Customer_ID","String")
+F.Data.DataTable.AddColumn("dtSales","Invoice_Line","String")
+F.Data.DataTable.AddColumn("dtSales","Country","String")
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.CallSub(GSTInData,"sGSTAcctIn",V.Local.sGLAccountsIn)
+
+F.Intrinsic.Control.CallSub(GSTOutData,"sGSTAcctOut",V.Local.sGLAccountsOut)
+
+F.Intrinsic.Control.If(V.Global.bFirstRun,=,True)
+	F.Intrinsic.Control.CallSub(SetContextMenus)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(SetIcon)
+
+Gui.fmGSTRpt..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.DataSetup.End
+
+Program.Sub.GSTInData.Start
+F.Intrinsic.Control.Try
+V.Local.sSQL.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtLedgerTemp.Exists)
+	F.Data.DataTable.Close("dtLedgerTemp")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtJDetail.Exists)
+	F.Data.DataTable.Close("dtJDetail")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtAPDetail.Exists)
+	F.Data.DataTable.Close("dtAPDetail")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtAPTax.Exists)
+	F.Data.DataTable.Close("dtAPTax")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtAPTaxH.Exists)
+	F.Data.DataTable.Close("dtAPTaxH")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+'Load data from GL_JOURNAL_DTL for GST in
+F.Intrinsic.String.Build("Select POST_DATE_SQL as POST_DATE, BATCH as BATCH_NUM, LINE as BATCH_LINE, AMOUNT_CMPNY as AMOUNT, REFERENCE, DESCRIPTION as DESCR from V_GL_JOURNAL_DTL where GL_NUMBER in {0} and POST_DATE_SQL between '{1}' and '{2}' order by POST_DATE_SQL, batch",V.Args.sGSTAcctIn,V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtJDetail","conts",V.Local.sSQL,True)
+'Add APPL_TYPE which will be taken from GL_DETAIL
+F.Data.DataTable.AddColumn("dtJDetail","APPL_TYPE","Long",0)
+F.Intrinsic.String.Build("select DISTINCT(BATCH), APPL_TYPE from GL_DETAIL where GL_NUMBER in {0} and POST_DATE_SQL between '{1}' and '{2}'",V.Args.sGSTAcctIn,V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dicGL","conts",V.Local.sSQL)
+F.Data.Dictionary.SetDefaultReturn("dicGL",0)
+F.Data.DataTable.FillFromDictionary("dtJDetail","dicGL","BATCH_NUM","APPL_TYPE")
+F.Data.Dictionary.Close("dicGL")
+
+'Load data from GL_AP_DETAIL
+F.Intrinsic.String.Build("select POST_DATE_SQL as POST_DATE, BATCH as BATCH_NUM, LINE as BATCH_LINE, AP_CODE, TRAN_TYPE, VENDOR, INVOICE_NO, AMOUNT_VEND as EXCH_AMT, INVC_TAXBL_AMT_CMPNY as INVC_TAXBL_AMT, INVC_TAXABL_AMT_VEND as EXCH_INVC_TAXBL_AMT, TAX_CODE from V_GL_AP_DETAIL where GL_NUMBER in {0} and POST_DATE_SQL between '{1}' and '{2}' order by POST_DATE_SQL, batch",V.Args.sGSTAcctIn,V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtAPDetail","conts",V.Local.sSQL,True)
+
+'Get all GST in
+F.Data.Linq.Join("LeftJoin","datatable","dtJDetail*!*J","datatable","dtAPDetail*!*AP","J.BATCH_NUM = AP.BATCH_NUM AND J.BATCH_LINE = AP.BATCH_LINE","J.BATCH_NUM*!*J.POST_DATE*!*J.BATCH_LINE*!*J.AMOUNT*!*J.DESCR*!*J.APPL_TYPE*!*AP.VENDOR*!*AP.TRAN_TYPE*!*AP.EXCH_AMT*!*AP.INVOICE_NO","","","","dtLedgerTemp",True)
+
+'Get AP_INV_TAX_DTL Data
+F.Intrinsic.String.Build("select VENDOR_ID as VENDOR, INVOICE, BATCH_NUM, BATCH_LINE, INVC_DATE, GL_TRNS_TYPE, RECEIVER, PO_NO, PO_LINE, RTRIM(PART) as PART, DESCR, TAX_ZONE as ZONE, TAX_AUTHORITY as AUTH, COST_INVOICED, TAX_AMOUNT, EXCH_COST_INVOICED, EXCH_TAX_AMOUNT from V_AP_INV_TAX_DTL where POST_DATE between '{0}' and '{1}' AND TAX_ZONE = '{2}'",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Screen.fmGSTRpt!cboZone.Text.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtAPTax","conts",V.Local.sSQL,True)
+
+'Get AP_INV_TAX_DTL_H Data
+F.Intrinsic.String.Build("select VENDOR_ID as VENDOR, INVOICE, BATCH_NUM, BATCH_LINE, INVC_DATE, GL_TRNS_TYPE, RECEIVER, PO_NO, PO_LINE, RTRIM(PART) as PART, DESCR, TAX_ZONE as ZONE, TAX_AUTHORITY as AUTH, COST_INVOICED, TAX_AMOUNT, EXCH_COST_INVOICED, EXCH_TAX_AMOUNT from V_AP_INV_TAX_DTL_H where POST_DATE between '{0}' and '{1}' AND TAX_ZONE = '{2}'",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Screen.fmGSTRpt!cboZone.Text.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtAPTaxH","conts",V.Local.sSQL,True)
+
+'Merge AP Tax datatables
+F.Data.DataTable.Merge("dtAPTaxH","dtAPTax",True,2)
+
+F.Intrinsic.Control.CallSub(PurchDetail)
+
+F.Intrinsic.Control.CallSub(GSTInGrid)
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GSTInData.End
+
+Program.Sub.PurchDetail.Start
+F.Intrinsic.Control.Try
+V.Local.dInvoiceDate.Declare(Date)
+
+V.Local.fAPInvoice.Declare
+V.Local.fAPInvoiceF.Declare
+V.Local.fAPTax.Declare
+V.Local.fAPTaxF.Declare
+
+V.Local.iCnt.Declare
+V.Local.iCnt2.Declare
+V.Local.iCRow.Declare
+V.Local.iRow.Declare
+
+V.Local.sBatchLine.Declare
+V.Local.sCustVen.Declare
+V.Local.sFilter.Declare
+V.Local.sLineNo.Declare
+V.Local.sMessage.Declare
+V.Local.sPart.Declare
+V.Local.sPOLine.Declare
+V.Local.sProduct.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sTaxCode.Declare
+V.Local.sVATID.Declare
+V.Local.sTransID.Declare
+V.Local.sPostDate.Declare
+
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtAPTax.RowCount--,1)
+	'Get supplier name
+	F.Intrinsic.String.Concat("vendor = '",V.DataTable.dtAPTax(V.Local.iCnt).vendor!FieldValTrim,"'",V.Local.sFilter)
+	F.Data.DataTable.Select("dtVen",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.Math.ConvertToLong(V.Local.sRet,V.Local.iRow)
+	V.Local.sCustVen.Set(V.DataTable.dtVen(V.Local.iRow).name!FieldValTrim)
+	'Get vendor VAT registration ID
+	V.Local.sVATID.Set(V.DataTable.dtVen(V.Local.iRow).ID!FieldValTrim)
+	F.Intrinsic.Control.CallSub(checktaxcode,"Zone",V.DataTable.dtAPTax(V.Local.iCnt).zone!FieldValTrim,"Auth",V.DataTable.dtAPTax(V.Local.iCnt).auth!FieldValTrim)
+	F.Intrinsic.Control.If(V.Args.iStore,=,1)
+		V.Local.dInvoiceDate.Set(V.DataTable.dtAPTax(V.Local.iCnt).invc_date!FieldVal)
+		'Line number is set to combination of batch no and batch line
+		F.Intrinsic.String.LPad(V.DataTable.dtAPTax(V.Local.iCnt).batch_line!FieldVal,"0",5,V.Local.sBatchLine)
+		F.Intrinsic.String.Concat(V.DataTable.dtAPTax(V.Local.iCnt).batch_num!FieldValTrim,V.Local.sBatchLine.Trim,V.Local.sLineNo)
+		V.Local.fAPInvoice.Set(V.DataTable.dtAPTax(V.Local.iCnt).cost_invoiced!FieldValFloat)
+		V.Local.fAPTax.Set(V.DataTable.dtAPTax(V.Local.iCnt).tax_amount!FieldValFloat)
+		F.Intrinsic.Control.If(V.DataTable.dtAPTax(V.Local.iCnt).gl_trns_type!FieldValTrim,=,"08")
+			F.Intrinsic.Math.Mult(-1,V.Local.fAPInvoice,V.Local.fAPInvoice)
+			F.Intrinsic.Math.Mult(-1,V.Local.fAPTax,V.Local.fAPTax)
+		F.Intrinsic.Control.EndIf
+		'Get invoice amount and invoice tax amount in forex if vendor currency is not base currency
+		F.Intrinsic.Control.If(V.DataTable.dtVen(V.Local.iRow).currency!FieldValTrim,<>,V.Global.sCoCurr.Trim)
+			V.Local.fAPInvoiceF.Set(V.DataTable.dtAPTax(V.Local.iCnt).exch_cost_invoiced!FieldValFloat)
+			V.Local.fAPTaxF.Set(V.DataTable.dtAPTax(V.Local.iCnt).exch_tax_amount!FieldValFloat)
+			F.Intrinsic.Control.If(V.DataTable.dtAPTax(V.Local.iCnt).gl_trns_type!FieldValTrim,=,"08")
+				F.Intrinsic.Math.Mult(-1,V.Local.fAPInvoiceF,V.Local.fAPInvoiceF)
+				F.Intrinsic.Math.Mult(-1,V.Local.fAPTaxF,V.Local.fAPTaxF)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.fAPInvoiceF.Set(0)
+			V.Local.fAPTaxF.Set(0)
+		F.Intrinsic.Control.EndIf
+		'Get tax code
+		V.Local.sTaxCode.Set(V.DataTable.dtAPTax(V.Local.iCnt).auth!FieldValTrim)
+		'Get product description
+		F.Intrinsic.Control.If(V.DataTable.dtAPTax(V.Local.iCnt).gl_trns_type!FieldValTrim,=,"08")
+			V.Local.sProduct.Set("Debit Note")
+		F.Intrinsic.Control.Else
+			'If it is an inventory part, get description from inventory master
+			V.Local.sPart.Set(V.DataTable.dtAPTax(V.Local.iCnt).part!FieldValTrim)
+			F.Intrinsic.String.Build("select description from inventory_mstr where part = '{0}'",V.Local.sPart.PSQLFriendly,V.Local.sSQL)
+			F.ODBC.Connection!conts.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.conts!rst.EOF,=,True)
+				F.ODBC.conts!rst.Close
+				F.Intrinsic.Control.If(V.DataTable.dtAPTax(V.Local.iCnt).po_no!FieldValTrim,=,"")
+					V.Local.sProduct.Set(V.DataTable.dtAPTax(V.Local.iCnt).part!FieldValTrim)
+				F.Intrinsic.Control.Else
+					'If receiver number and PO number exist, get the PO line description
+					F.Intrinsic.String.LPad(V.DataTable.dtAPTax(V.Local.iCnt).po_line!FieldValTrim,"0",3,V.Local.sPOLine)
+					F.Intrinsic.String.Build("select description from po_receiver where receiver_no = '{0}' and purchase_order = '{1}' and po_line = '{2}'",V.DataTable.dtAPTax(V.Local.iCnt).receiver!FieldValTrim,V.DataTable.dtAPTax(V.Local.iCnt).po_no!FieldValTrim,V.Local.sPOLine.Trim,V.Local.sSQL)
+					F.ODBC.Connection!conts.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+					F.Intrinsic.Control.If(V.ODBC.conts!rst.EOF,=,True)
+						'PO is not found in receiving table
+						V.Local.sProduct.Set(V.DataTable.dtAPTax(V.Local.iCnt).part!FieldValTrim)
+					F.Intrinsic.Control.Else
+						V.Local.sProduct.Set(V.ODBC.conts!rst.FieldValTrim!description)
+					F.Intrinsic.Control.EndIf
+					F.ODBC.conts!rst.Close
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sProduct.Set(V.ODBC.conts!rst.FieldValTrim!description)
+				F.ODBC.conts!rst.Close
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		'Store data into dtPurch
+		F.Data.DataTable.AddRow("dtPurch","Supplier_Name",V.Local.sCustVen.Trim,"Supplier_ID",V.Local.sVATID,"Invoice_Date",V.Local.dInvoiceDate,"Invoice_No",V.DataTable.dtAPTax(V.Local.iCnt).invoice!FieldValTrim,"Invoice_Line",V.Local.sLineNo,"Product_Desc",V.Local.sProduct,"Purch_Value_Base",V.Local.fAPInvoice,"Purch_GST_Base",V.Local.fAPTax,"Tax_Code",V.Local.sTaxCode,"Purch_Value_FCC",V.Local.fAPInvoiceF,"Purch_GST_FCC",V.Local.fAPTaxF,"Batch_Num",V.DataTable.dtAPTax(V.Local.iCnt).batch_num!FieldValTrim,"Batch_Line",V.Local.sBatchLine.Trim)
+		F.Intrinsic.Control.If(V.DataTable.dtVen(V.Local.iRow).currency!FieldValTrim,=,V.Global.sCoCurr.Trim)
+			F.Data.DataTable.SetValue("dtPurch",V.DataTable.dtPurch.RowCount--,"FCC","XXX")
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtPurch",V.DataTable.dtPurch.RowCount--,"FCC",V.DataTable.dtVen(V.Local.iRow).currency!FieldValTrim)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Intrinsic.Control.For(V.Local.iCnt2,0,V.DataTable.dtLedgerTemp.RowCount--,1)
+	F.Intrinsic.Math.Add(V.Local.iCnt2,1,V.Local.iCRow)
+	F.Intrinsic.String.Build("GL Account: {0} (GST Input) Reading record {1} of {2}",V.Global.sVATIn.Trim,V.Local.iCRow,V.DataTable.dtLedgerTemp.RowCount,V.Local.sMessage)
+	F.Intrinsic.UI.ChangeWaitStatus(V.Local.sMessage,V.Local.iCRow,1,V.DataTable.dtLedgerTemp.RowCount)
+	
+	'Get supplier name
+	F.Intrinsic.String.Concat("vendor = '",V.DataTable.dtLedgerTemp(V.Local.iCnt2).vendor!FieldValTrim,"'",V.Local.sFilter)
+	F.Data.DataTable.Select("dtVen",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.Math.ConvertToLong(V.Local.sRet,V.Local.iRow)
+	V.Local.sCustVen.Set(V.DataTable.dtVen(V.Local.iRow).name!FieldValTrim)
+	
+	'Transaction ID is set to combination of batch num and batch line
+	F.Intrinsic.String.Concat(V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,"-",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_line!FieldValTrim,V.Local.sTransID)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtLedgerTemp(V.Local.iCnt2).appl_type!FieldVal,<>,1)
+		'APPL_TYPE other than 1 i.e. other than AP
+		F.Intrinsic.String.Format(V.DataTable.dtLedgerTemp(V.Local.iCnt2).post_date!FieldVal,"M/D/YYYY",V.Local.sPostDate)
+'		F.Intrinsic.String.Build("Batch = '{0}' and Line = {1} and PostDate = #{2}#",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_line!FieldVal,V.Local.sPostDate,V.Local.sFilter)
+'		F.Data.DataTable.Select("dtData",V.Local.sFilter,V.Local.sRet)
+'		F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+'			F.Data.DataTable.AddRow("dtPurch","Invoice_Line",V.Local.sTransID.Trim,"Product_Desc",V.DataTable.dtData(V.Local.sRet).Reference!FieldValTrim,"Purch_Value_Base",V.DataTable.dtData(V.Local.sRet).BaseAmt!FieldVal,"Purch_GST_Base",V.DataTable.dtData(V.Local.sRet).TaxAmt!FieldVal,"FCC","XXX","Purch_Value_FCC",0,"Purch_GST_FCC",0,"Batch_Num",V.DataTable.dtData(V.Local.sRet).Batch!FieldValTrim,"Batch_Line",V.DataTable.dtData(V.Local.sRet).Line!FieldVal)
+'		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.DataTable.dtLedgerTemp(V.Local.iCnt2).appl_type!FieldValTrim,=,"AP")
+		'Check if AP entry has been stored into purchase datatable
+		V.Local.sInvoice.Set(V.DataTable.dtLedgerTemp(V.Local.iCnt2).invoice_no!FieldValTrim)
+		F.Intrinsic.String.Build("Invoice_No = '{1}' and Batch_Num = '{0}'",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,V.Local.sInvoice.PSQLFriendly,V.Local.sFilter)
+		F.Data.DataTable.Select("dtPurch",V.Local.sFilter,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+			'If it has not been stored, create a new purchase row in datatable
+			F.Intrinsic.String.Build("select batch_line, date_invoice, tax_code, vend_taxable_amt, vend_tax_amt, invc_taxable_amt, invc_tax_amt from v_ap_open_items where invoice = '{0}' and batch_num = '{1}'",V.Local.sInvoice.PSQLFriendly,V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("dtInvc","conts",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.DataTable.dtInvc.RowCount,>,0)
+				'Store data into dtPurch
+				F.Intrinsic.Control.if(V.DataTable.dtInvc(0).tax_code!FieldValTrim,<>,"")
+					F.Intrinsic.String.Build("tax_code = '{0}'",V.DataTable.dtInvc(0).tax_code!FieldValTrim,V.Local.sFilter)
+					F.Data.DataTable.Select("dtTax",V.Local.sFilter,V.Local.sRet)
+					V.Local.sTaxCode.Set(V.DataTable.dtTax(V.Local.sRet).desc!FieldValTrim)
+				F.Intrinsic.Control.Else
+					V.Local.sTaxCode.Set("")
+				F.Intrinsic.Control.EndIf
+				'Get the invoice amount
+				F.Intrinsic.Control.If(V.DataTable.dtLedgerTemp(V.Local.iCnt2).tran_type!FieldVal,=,4)
+					'Invoice/accrual only
+					V.Local.fAPTax.Set(V.DataTable.dtLedgerTemp(V.Local.iCnt2).amount!FieldValFloat)
+					V.Local.fAPTaxF.Set(V.DataTable.dtLedgerTemp(V.Local.iCnt2).exch_amt!FieldValFloat)
+					F.Intrinsic.String.Build("select invc_taxbl_amt_cmpny as amount, invc_taxabl_amt_vend as exch_amt from v_gl_ap_detail where batch = '{0}' and invoice_no = '{1}' and gl_number = '{2}'",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,V.Local.sInvoice.PSQLFriendly,V.Global.sAccrGL.Trim,V.Local.sSQL)
+					F.Data.DataTable.CreateFromSQL("dtInvcGL","conts",V.Local.sSQL)
+					F.Data.DataTable.Compute("dtInvcGL","SUM(amount)","",V.Local.fAPInvoice)
+					F.Data.DataTable.Compute("dtInvcGL","SUM(exch_amt)","",V.Local.fAPInvoiceF)
+					F.Data.DataTable.Close("dtInvcGL")
+				F.Intrinsic.Control.Else
+					V.Local.fAPInvoice.Set(V.DataTable.dtInvc(0).invc_taxable_amt!FieldValFloat)
+					V.Local.fAPInvoiceF.Set(V.DataTable.dtInvc(0).vend_taxable_amt!FieldValFloat)
+					V.Local.fAPTax.Set(V.DataTable.dtInvc(0).invc_tax_amt!FieldValFloat)
+					V.Local.fAPTaxF.Set(V.DataTable.dtInvc(0).vend_tax_amt!FieldValFloat)
+				F.Intrinsic.Control.EndIf
+				F.Data.DataTable.AddRow("dtPurch","Supplier_Name",V.Local.sCustVen.Trim,"Supplier_ID",V.DataTable.dtVen(V.Local.iRow).SupplierID!FieldValTrim,"Invoice_Date",V.DataTable.dtInvc(0).date_invoice!FieldVal,"Invoice_No",V.DataTable.dtLedgerTemp(V.Local.iCnt2).invoice_no!FieldValTrim,"Invoice_Line",V.Local.sTransID,"Product_Desc","","Purch_Value_Base",V.Local.fAPInvoice,"Purch_GST_Base",V.Local.fAPTax,"Tax_Code",V.Local.sTaxCode,"Purch_Value_FCC",V.Local.fAPInvoiceF,"Purch_GST_FCC",V.Local.fAPTaxF,"Batch_Num",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,"Batch_Line",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_line!FieldValTrim)
+				F.Intrinsic.Control.If(V.DataTable.dtVen(V.Local.iRow).currency!FieldValTrim,=,V.Global.sCoCurr.Trim)
+					F.Data.DataTable.SetValue("dtPurch",V.DataTable.dtPurch.RowCount--,"FCC","XXX")
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.SetValue("dtPurch",V.DataTable.dtPurch.RowCount--,"FCC",V.DataTable.dtVen(V.Local.iRow).currency!FieldValTrim)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.Close("dtInvc")
+				'Check AP history
+				F.Intrinsic.String.Build("select batch_line, date_invoice, tax_code, vend_taxable_amt, vend_tax_amt, invc_taxable_amt, invc_tax_amt from ap_hist where invoice = '{0}' and batch_num = '{1}'",V.Local.sInvoice.PSQLFriendly,V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,V.Local.sSQL)
+				F.Data.DataTable.CreateFromSQL("dtInvc","conts",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.DataTable.dtInvc.RowCount,>,0)
+					'Store data into dtPurch
+					F.Intrinsic.Control.if(V.DataTable.dtInvc(0).tax_code!FieldValTrim,<>,"")
+						F.Intrinsic.String.Build("tax_code = '{0}'",V.DataTable.dtInvc(0).tax_code!FieldValTrim,V.Local.sFilter)
+						F.Data.DataTable.Select("dtTax",V.Local.sFilter,V.Local.sRet)
+						V.Local.sTaxCode.Set(V.DataTable.dtTax(V.Local.sRet).desc!FieldValTrim)
+					F.Intrinsic.Control.Else
+						V.Local.sTaxCode.Set("")
+					F.Intrinsic.Control.EndIf
+					'Get the invoice amount
+					F.Intrinsic.Control.If(V.DataTable.dtLedgerTemp(V.Local.iCnt2).tran_type!FieldVal,=,4)
+						'Invoice/accrual only
+						V.Local.fAPTax.Set(V.DataTable.dtLedgerTemp(V.Local.iCnt2).amount!FieldValFloat)
+						V.Local.fAPTaxF.Set(V.DataTable.dtLedgerTemp(V.Local.iCnt2).exch_amt!FieldValFloat)
+						F.Intrinsic.String.Build("select invc_taxbl_amt_cmpny as amount, invc_taxabl_amt_vend as exch_amt from v_gl_ap_detail where batch = '{0}' and invoice_no = '{1}' and gl_number = '{2}'",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,V.Local.sInvoice.PSQLFriendly,V.Global.sAccrGL.Trim,V.Local.sSQL)
+						F.Data.DataTable.CreateFromSQL("dtInvcGL","conts",V.Local.sSQL)
+						F.Data.DataTable.Compute("dtInvcGL","SUM(amount)","",V.Local.fAPInvoice)
+						F.Data.DataTable.Compute("dtInvcGL","SUM(exch_amt)","",V.Local.fAPInvoiceF)
+						F.Data.DataTable.Close("dtInvcGL")
+					F.Intrinsic.Control.Else
+						V.Local.fAPInvoice.Set(V.DataTable.dtInvc(0).invc_taxable_amt!FieldValFloat)
+						V.Local.fAPInvoiceF.Set(V.DataTable.dtInvc(0).vend_taxable_amt!FieldValFloat)
+						V.Local.fAPTax.Set(V.DataTable.dtInvc(0).invc_tax_amt!FieldValFloat)
+						V.Local.fAPTaxF.Set(V.DataTable.dtInvc(0).vend_tax_amt!FieldValFloat)
+					F.Intrinsic.Control.EndIf
+					F.Data.DataTable.AddRow("dtPurch","Supplier_Name",V.Local.sCustVen.Trim,"Supplier_ID",V.DataTable.dtVen(V.Local.iRow).SupplierID!FieldValTrim,"Invoice_Date",V.DataTable.dtInvc(0).date_invoice!FieldVal,"Invoice_No",V.DataTable.dtLedgerTemp(V.Local.iCnt2).invoice_no!FieldValTrim,"Invoice_Line",V.Local.sTransID,"Product_Desc","","Purch_Value_Base",V.Local.fAPInvoice,"Purch_GST_Base",V.Local.fAPTax,"Tax_Code",V.Local.sTaxCode,"Purch_Value_FCC",V.Local.fAPInvoiceF,"Purch_GST_FCC",V.Local.fAPTaxF,"Batch_Num",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_num!FieldValTrim,"Batch_Line",V.DataTable.dtLedgerTemp(V.Local.iCnt2).batch_line!FieldValTrim)
+					F.Intrinsic.Control.If(V.DataTable.dtVen(V.Local.iRow).currency!FieldValTrim,=,V.Global.sCoCurr.Trim)
+						F.Data.DataTable.SetValue("dtPurch",V.DataTable.dtPurch.RowCount--,"FCC","XXX")
+					F.Intrinsic.Control.Else
+						F.Data.DataTable.SetValue("dtPurch",V.DataTable.dtPurch.RowCount--,"FCC",V.DataTable.dtVen(V.Local.iRow).currency!FieldValTrim)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			F.Data.DataTable.Close("dtInvc")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt2)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.PurchDetail.End
+
+Program.Sub.GSTInGrid.Start
+F.Intrinsic.Control.Try
+V.Local.sCaption.Declare
+V.Local.iCnt.Declare
+V.Local.iTRow.Declare
+V.Local.sRet.Declare
+V.Local.fAmtTotal.Declare
+V.Local.fGSTTotal.Declare
+V.Local.sTemp.Declare
+
+F.Data.DataView.Create("dtPurch","dvPurch",22,"","Supplier_Name ASC, Invoice_Date ASC, Invoice_No ASC")
+Gui.fmGSTRpt.GsGridIn.AddGridViewFromDataview("gvPurch","dtPurch","dvPurch")
+
+Gui.fmGSTRpt.GsGridIn.MainView("gvPurch")
+
+Gui.fmGSTRpt.GsGridIn.SuspendLayout
+
+'Purchase
+'GridView Property
+Gui.fmGSTRpt.GsGridIn.SetGridViewProperty("gvPurch","Editable",False)
+Gui.fmGSTRpt.GsGridIn.SetGridViewProperty("gvPurch","AllowSort",True)
+Gui.fmGSTRpt.GsGridIn.SetGridViewProperty("gvPurch","AllowFilter",True)
+
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_Name","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_Name","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_ID","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_ID","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Date","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Date","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_No","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_No","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Import_Decl_No","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Import_Decl_No","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Product_Desc","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Product_Desc","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_Base","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_Base","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_Base","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_Base","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Tax_Code","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Tax_Code","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","FCC","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","FCC","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_FCC","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_FCC","ReadOnly",True)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_FCC","AllowEdit",False)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_FCC","ReadOnly",True)
+'Format cells with number and date
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_Base","DisplayCustomNumeric","###,###,###,##0.00")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_Base","DisplayCustomNumeric","###,###,###,##0.00")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_FCC","DisplayCustomNumeric","###,###,###,##0.00")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_FCC","DisplayCustomNumeric","###,###,###,##0.00")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Date","DisplayCustomDatetime","d")
+'Change header caption
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_Name","Caption","Supplier Name")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_ID","Caption","Tax ID")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Date","Caption","Invoice Date")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_No","Caption","Invoice No.")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Import_Decl_No","Caption","Import Declaration No.")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Line","Caption","Invoice Line")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Product_Desc","Caption","Product Description")
+F.Intrinsic.String.Build("Purchase Value {0}",V.Global.sCoCurr.Trim,V.Local.sCaption)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_Base","Caption",V.Local.sCaption)
+F.Intrinsic.String.Build("Purchase GST {0}",V.Global.sCoCurr.Trim,V.Local.sCaption)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_Base","Caption",V.Local.sCaption)
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Tax_Code","Caption","Tax Code")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","FCC","Caption","Currency")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_FCC","Caption","Purchase Value Forex")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_FCC","Caption","Purchase GST Forex")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Batch_Num","Caption","Batch No.")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Batch_Line","Caption","Batch Line")
+
+'Set the width of every column
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_Name","MinWidth","180")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_ID","MinWidth","100")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Date","MinWidth","90")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_No","MinWidth","100")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Import_Decl_No","MinWidth","150")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Line","MinWidth","90")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Product_Desc","MinWidth","180")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_Base","MinWidth","120")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_Base","MinWidth","100")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Tax_Code","MinWidth","60")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","FCC","MinWidth","60")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_FCC","MinWidth","120")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_FCC","MinWidth","100")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Batch_Num","MinWidth","90")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Batch_Line","MinWidth","90")
+'Make header to center aligned
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_Name","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_ID","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Date","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_No","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Import_Decl_No","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Line","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Product_Desc","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_Base","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_Base","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Tax_Code","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","FCC","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_FCC","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_FCC","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Batch_Num","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Batch_Line","HeaderHAlignment","Center")
+'Cell alignment center
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Date","CELLHALIGNMENT","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Tax_Code","CELLHALIGNMENT","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","FCC","CELLHALIGNMENT","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Batch_Num","CellHAlignment","Center")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Batch_Line","CellHAlignment","Center")
+
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Tax_Code","Fixed","Left")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_No","Fixed","Left")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Invoice_Date","Fixed","Left")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Supplier_Name","Fixed","Left")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_Value_Base","Fixed","Left")
+Gui.fmGSTRpt.GsGridIn.SetColumnProperty("gvPurch","Purch_GST_Base","Fixed","Left")
+
+'Column summary
+Gui.fmGSTRpt.GsGridIn.AddSummaryItem("gvPurch","Purch_Value_Base","PURCH_AMT_SUM","SUM","","","##,###,##0.00")
+Gui.fmGSTRpt.GsGridIn.AddSummaryItem("gvPurch","Purch_GST_Base","PURCH_GST_SUM","SUM","","","##,###,##0.00")
+
+'Highlight purchase view
+'Gui.fmGSTRpt.GsGridIn.GetRowCount("gvPurch",V.Local.iTRow)
+'F.Intrinsic.Math.Sub(V.Local.iTRow,1,V.Local.iTRow)
+'F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iTRow,1)
+'	Gui.fmGSTRpt.GsGridIn.GetRowValues("gvPurch",V.Local.iCnt,V.Local.sRet)
+'	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'	F.Intrinsic.Control.If(V.Local.sRet(9).Trim,=,"")
+'		Gui.fmGSTRpt.GsGridIn.SetCellAppearance("gvPurch",9,V.Local.iCnt,"backcolor",V.Color.Yellow)
+'	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.If(V.Local.sRet(0).Trim,=,"")
+'		Gui.fmGSTRpt.GsGridIn.SetCellAppearance("gvPurch",0,V.Local.iCnt,"backcolor",V.Color.Yellow)
+'	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.If(V.Local.sRet(1).Trim,=,"")
+'		Gui.fmGSTRpt.GsGridIn.SetCellAppearance("gvPurch",1,V.Local.iCnt,"backcolor",V.Color.Yellow)
+'	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.If(V.Local.sRet(3).Trim,=,"")
+'		Gui.fmGSTRpt.GsGridIn.SetCellAppearance("gvPurch",3,V.Local.iCnt,"backcolor",V.Color.Yellow)
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Data.DataTable.Compute("dtPurch","SUM(Purch_Value_Base)","",V.Local.sTemp)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,=,"")
+	V.Local.fAmtTotal.Set(0)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sTemp,V.Local.fAmtTotal)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Format(V.Local.fAmtTotal,"#,0.00",V.Local.sTemp)
+Gui.fmGSTRpt.txtPV.Text(V.Local.sTemp)
+F.Data.DataTable.Compute("dtPurch","SUM(Purch_GST_Base)","",V.Local.sTemp)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,=,"")
+	V.Local.fGSTTotal.Set(0)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sTemp,V.Local.fGSTTotal)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Format(V.Local.fGSTTotal,"#,0.00",V.Local.sTemp)
+Gui.fmGSTRpt.txtPGST.Text(V.Local.sTemp)
+Gui.fmGSTRpt.txtPR.Text(V.DataTable.dtPurch.RowCount)
+
+Gui.fmGSTRpt.GsGridIn.ResumeLayout
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GSTInGrid.End
+
+Program.Sub.GSTOutData.Start
+F.Intrinsic.Control.Try
+V.Local.sSQL.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtJDetail.Exists)
+	F.Data.DataTable.Close("dtJDetail")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtARDetail.Exists)
+	F.Data.DataTable.Close("dtARDetail")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtLedgerTemp.Exists)
+	F.Data.DataTable.Close("dtLedgerTemp")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtARTax.Exists)
+	F.Data.DataTable.Close("dtARTax")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtARTaxH.Exists)
+	F.Data.DataTable.Close("dtARTaxH")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtARTemp.Exists)
+	F.Data.DataTable.Close("dtARTemp")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtARTempH.Exists)
+	F.Data.DataTable.Close("dtARTempH")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtARTempR.Exists)
+	F.Data.DataTable.Close("dtARTempR")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtARTempRH.Exists)
+	F.Data.DataTable.Close("dtARTempRH")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+'Load data from GL_JOURNAL_DTL for GST out
+F.Intrinsic.String.Build("SELECT POST_DATE_SQL AS POST_DATE, BATCH AS BATCH_NUM, LINE AS BATCH_LINE, AMOUNT_CMPNY AS AMOUNT, REFERENCE, DESCRIPTION AS DESCR FROM V_GL_JOURNAL_DTL WHERE RTRIM(GL_NUMBER) IN {0} AND POST_DATE_SQL BETWEEN '{1}' AND '{2}' ORDER BY POST_DATE_SQL, BATCH",V.Args.sGSTAcctOut,V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtJDetail","conts",V.Local.sSQL,True)
+'Add APPL_TYPE which will be taken from GL_DETAIL
+F.Data.DataTable.AddColumn("dtJDetail","APPL_TYPE","Long",0)
+F.Intrinsic.String.Build("SELECT DISTINCT(BATCH), APPL_TYPE FROM GL_DETAIL WHERE RTRIM(GL_NUMBER) IN {0} AND POST_DATE_SQL BETWEEN '{1}' AND '{2}'",V.Args.sGSTAcctOut,V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dicGL","conts",V.Local.sSQL)
+F.Data.Dictionary.SetDefaultReturn("dicGL",0)
+F.Data.DataTable.FillFromDictionary("dtJDetail","dicGL","BATCH_NUM","APPL_TYPE")
+F.Data.Dictionary.Close("dicGL")
+
+'Load data from GL_AR_DETAIL
+F.Intrinsic.String.Build("SELECT POST_DATE_SQL AS POST_DATE, BATCH AS BATCH_NUM, LINE AS BATCH_LINE, TRAN_TYPE, CUST AS CUSTOMER, INVOICE_NO, AMOUNT_OE AS EXCH_AMT FROM V_GL_AR_DETAIL WHERE RTRIM(GL_NUMBER) IN {0} AND POST_DATE_SQL BETWEEN '{1}' AND '{2}' ORDER BY POST_DATE_SQL, BATCH",V.Args.sGSTAcctOut,V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtARDetail","conts",V.Local.sSQL,True)
+
+'Get all GST out
+F.Data.Linq.Join("LeftJoin","datatable","dtJDetail*!*J","datatable","dtARDetail*!*AR","J.BATCH_NUM = AR.BATCH_NUM AND J.BATCH_LINE = AR.BATCH_LINE","J.BATCH_NUM*!*J.POST_DATE*!*J.BATCH_LINE*!*J.AMOUNT*!*J.DESCR*!*J.APPL_TYPE*!*AR.CUSTOMER*!*AR.EXCH_AMT*!*AR.INVOICE_NO","","","","dtLedgerTemp",True)
+
+'AR_INV_TAX_DTL
+F.Intrinsic.String.Build("SELECT TB1.CUSTOMER AS CUSTOMER, TB1.INVOICE AS INVOICE, TB1.BATCH_NUM AS BATCH_NUM, TB2.BATCH_LINE AS BATCH_LINE, TB1.INVC_DATE_FORMAT AS INVC_DATE, TB1.GL_TRANS_TYPE AS GL_TRNS_TYPE, TB1.TAXABLE_AMT AS TAXABLE_AMT, TB1.TAX_AMOUNT AS TAX_AMOUNT, TB1.EXCH_TAXABLE_AMT AS EXCH_TAXABLE_AMT, TB1.EXCH_TAX_AMT AS EXCH_TAX_AMT, TB1.TAX_ZONE AS ZONE, TB1.TAX_AUTHORITY AS AUTH, TB1.TAXCD_DESC AS TAX_CODE, TB2.REFERENCE AS REFERENCE, TB2.AMT_INVOICE AS AMT_INVOICE,TB2.BATCH_CODE AS BATCH_CODE FROM V_AR_INV_TAX_DTL TB1 LEFT JOIN V_AR_OPEN_ITEMS TB2 ON TB1.CUSTOMER = TB2.CUSTOMER AND TB1.INVOICE = TB2.INVOICE AND TB1.BATCH_NUM = TB2.BATCH_NUM WHERE POST_DATE_FORMAT BETWEEN '{0}' AND '{1}' AND TB1.TAX_ZONE = '{2}'",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Screen.fmGSTRpt!cboZone.Text.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtARTax","conts",V.Local.sSQL,True)
+
+'AR_INV_TAX_DTL_H
+F.Intrinsic.String.Build("SELECT TB1.CUSTOMER AS CUSTOMER, TB1.INVOICE AS INVOICE, TB1.BATCH_NUM AS BATCH_NUM, TB2.BATCH_LINE AS BATCH_LINE, TB1.INVC_DATE_FORMAT AS INVC_DATE, TB1.GL_TRANS_TYPE AS GL_TRNS_TYPE, TB1.TAXABLE_AMT AS TAXABLE_AMT, TB1.TAX_AMOUNT AS TAX_AMOUNT, TB1.EXCH_TAXABLE_AMT AS EXCH_TAXABLE_AMT, TB1.EXCH_TAX_AMT AS EXCH_TAX_AMT, TB1.TAX_ZONE AS ZONE, TB1.TAX_AUTHORITY AS AUTH, TB1.TAXCD_DESC AS TAX_CODE, TB2.REFERENCE AS REFERENCE, TB2.AMT_INVOICE AS AMT_INVOICE,TB2.BATCH_CODE AS BATCH_CODE FROM V_AR_INV_TAX_DTL_H TB1 LEFT JOIN V_AR_HISTORY TB2 ON TB1.CUSTOMER = TB2.CUSTOMER AND TB1.INVOICE = TB2.INVOICE AND TB1.BATCH_NUM = TB2.BATCH_NUM WHERE POST_DATE_FORMAT BETWEEN '{0}' AND '{1}' AND TB1.TAX_ZONE = '{2}'",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Screen.fmGSTRpt!cboZone.Text.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtARTaxH","conts",V.Local.sSQL,True)
+
+F.Data.DataTable.Merge("dtARTaxH","dtARTax",True,2)
+
+'Get S Invoice Batch from AR_OPEN_ITEMS
+F.Intrinsic.String.Build("SELECT CUSTOMER, INVOICE, BATCH_CODE, BATCH_NUM, BATCH_LINE, DATE_INVOICE, REFERENCE, ORDER_NO, ORDER_SUFFIX FROM V_AR_OPEN_ITEMS WHERE DATE_TRANSACTION BETWEEN '{0}' AND '{1}' AND LEFT(BATCH_NUM,1) = 'S'",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtARTemp","conts",V.Local.sSQL,True)
+
+'Get S Invoice Batch from AR_HISTORY
+F.Intrinsic.String.Build("SELECT CUSTOMER, INVOICE, BATCH_CODE, BATCH_NUM, BATCH_LINE, DATE_INVOICE, REFERENCE, ORDER_NO, ORDER_SUFFIX FROM V_AR_HISTORY WHERE DATE_TRANSACTION BETWEEN '{0}' AND '{1}' AND LEFT(BATCH_NUM,1) = 'S'",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtARTempH","conts",V.Local.sSQL,True)
+
+'Get R Invoice Batch from AR_OPEN_ITEMS where BATCH_CODE = 10
+F.Intrinsic.String.Build("SELECT CUSTOMER, INVOICE, BATCH_CODE, BATCH_NUM, BATCH_LINE, DATE_INVOICE, REFERENCE, ORDER_NO, ORDER_SUFFIX FROM V_AR_OPEN_ITEMS WHERE DATE_TRANSACTION BETWEEN '{0}' AND '{1}' AND LEFT(BATCH_NUM,1) = 'R' AND BATCH_CODE = '10'",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtARTempR","conts",V.Local.sSQL,True)
+
+'Get R Invoice Batch from AR_HISTORY where BATCH_CODE = 10
+F.Intrinsic.String.Build("SELECT CUSTOMER, INVOICE, BATCH_CODE, BATCH_NUM, BATCH_LINE, DATE_INVOICE, REFERENCE, ORDER_NO, ORDER_SUFFIX FROM V_AR_HISTORY WHERE DATE_TRANSACTION BETWEEN '{0}' AND '{1}' AND LEFT(BATCH_NUM,1) = 'R' AND BATCH_CODE = '10'",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtARTempRH","conts",V.Local.sSQL,True)
+
+F.Data.DataTable.Merge("dtARTempH","dtARTemp",True,2)
+F.Data.DataTable.Merge("dtARTempR","dtARTemp",True,2)
+F.Data.DataTable.Merge("dtARTempRH","dtARTemp",True,2)
+
+F.Intrinsic.Control.CallSub(SalesDetail)
+
+F.Intrinsic.Control.CallSub(GSTOutGrid)
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GSTOutData.End
+
+Program.Sub.SalesDetail.Start
+F.Intrinsic.Control.Try
+V.Local.dInvoiceDate.Declare(Date)
+
+V.Local.fARInvoice.Declare
+V.Local.fARInvoiceF.Declare
+V.Local.fARTax.Declare
+V.Local.fARTaxF.Declare
+
+V.Local.iCNT.Declare
+V.Local.iCNT2.Declare
+V.Local.iCRow.Declare
+V.Local.iRow.Declare
+
+V.Local.sBatchLine.Declare
+V.Local.sCountry.Declare
+V.Local.sCustVen.Declare
+V.Local.sFilter.Declare
+V.Local.sLineNo.Declare
+V.Local.sMessage.Declare
+V.Local.sProduct.Declare
+V.Local.sRet.Declare
+V.Local.sTaxCode.Declare
+V.Local.sVATID.Declare
+V.Local.sInvoice.Declare
+V.Local.sSQL.Declare
+
+'Active Sales
+F.Intrinsic.Control.For(V.Local.iCNT,0,V.DataTable.dtARTax.RowCount--,1)
+	'Get customer name
+	F.Intrinsic.String.Concat("customer = '",V.DataTable.dtARTax(V.Local.iCNT).customer!FieldValTrim,"'",V.Local.sFilter)
+	F.Data.DataTable.Select("dtCust",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.Math.ConvertToLong(V.Local.sRet,V.Local.iRow)
+	V.Local.sCustVen.Set(V.DataTable.dtCust(V.Local.iRow).name!FieldValTrim)
+	'Get customer VAT registration ID
+	V.Local.sVATID.Set(V.DataTable.dtCust(V.Local.iRow).ID!FieldValTrim)
+	V.Local.sCountry.Set(V.DataTable.dtCust(V.Local.iRow).country!FieldValTrim)
+	F.Intrinsic.Control.CallSub(checktaxcode,"Zone",V.DataTable.dtARTax(V.Local.iCNT).zone!FieldValTrim,"Auth",V.DataTable.dtARTax(V.Local.iCNT).auth!FieldValTrim)
+	F.Intrinsic.Control.If(V.Args.iStore,=,1)
+		V.Local.dInvoiceDate.Set(V.DataTable.dtARTax(V.Local.iCNT).invc_date!FieldVal)
+		'Line number is set to combination of batch no and batch line
+		F.Intrinsic.String.LPad(V.DataTable.dtARTax(V.Local.iCNT).batch_line!FieldValTrim,"0",5,V.Local.sBatchLine)
+		F.Intrinsic.String.Concat(V.DataTable.dtARTax(V.Local.iCNT).batch_num!FieldValTrim,V.Local.sBatchLine.Trim,V.Local.sLineNo)
+		V.Local.fARInvoice.Set(V.DataTable.dtARTax(V.Local.iCNT).taxable_amt!FieldValFloat)
+		V.Local.fARTax.Set(V.DataTable.dtARTax(V.Local.iCNT).tax_amount!FieldValFloat)
+		F.Intrinsic.Control.If(V.DataTable.dtARTax(V.Local.iCNT).amt_invoice!FieldValFloat,<,0)
+			F.Intrinsic.Math.Mult(-1,V.Local.fARInvoice,V.Local.fARInvoice)
+			F.Intrinsic.Math.Mult(-1,V.Local.fARTax,V.Local.fARTax)
+		F.Intrinsic.Control.EndIf
+		'Get invoice amount and invoice tax amount in forex if vendor currency is not base currency
+		F.Intrinsic.Control.If(V.DataTable.dtCust(V.Local.iRow).currency!FieldValTrim,<>,V.Global.sCoCurr.Trim)
+			V.Local.fARInvoiceF.Set(V.DataTable.dtARTax(V.Local.iCNT).exch_taxable_amt!FieldValFloat)
+			V.Local.fARTaxF.Set(V.DataTable.dtARTax(V.Local.iCNT).exch_tax_amt!FieldValFloat)
+			F.Intrinsic.Control.If(V.DataTable.dtARTax(V.Local.iCNT).amt_invoice!FieldValFloat,<,0)
+				F.Intrinsic.Math.Mult(-1,V.Local.fARInvoiceF,V.Local.fARInvoiceF)
+				F.Intrinsic.Math.Mult(-1,V.Local.fARTaxF,V.Local.fARTaxF)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.fARInvoiceF.Set(0)
+			V.Local.fARTaxF.Set(0)
+		F.Intrinsic.Control.EndIf
+		'Get tax code
+		V.Local.sTaxCode.Set(V.DataTable.dtARTax(V.Local.iCNT).auth!FieldValTrim)
+		'Get product description
+		V.Local.sProduct.Set(V.DataTable.dtARTax(V.Local.iCNT).reference!FieldValTrim)
+		F.Intrinsic.Control.If(V.DataTable.dtARTax(V.Local.iCNT).batch_code!FieldValTrim,=,"12")
+			V.Local.sProduct.Set("Credit Note")
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AddRow("dtSales","Customer_Name",V.Local.sCustVen.Trim,"Customer_ID",V.Local.sVATID.Trim,"Invoice_Date",V.Local.dInvoiceDate,"Invoice_No",V.DataTable.dtARTax(V.Local.iCNT).invoice!FieldValTrim,"Invoice_Line",V.Local.sLineNo.Trim,"Product_Desc",V.Local.sProduct,"Sales_Value_Base",V.Local.fARInvoice,"Sales_GST_Base",V.Local.fARTax,"Tax_Code",V.Local.sTaxCode,"Country",V.Local.sCountry,"Sales_Value_FCC",V.Local.fARInvoiceF,"Sales_GST_FCC",V.Local.fARTaxF,"Batch_Num",V.DataTable.dtARTax(V.Local.iCNT).batch_num!FieldValTrim,"Batch_Line",V.Local.sBatchLine.Trim)
+		F.Intrinsic.Control.If(V.DataTable.dtCust(V.Local.iRow).currency!FieldValTrim,=,V.Global.sCoCurr.Trim)
+			F.Data.DataTable.SetValue("dtSales",V.DataTable.dtSales.RowCount--,"FCC","XXX")
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtSales",V.DataTable.dtSales.RowCount--,"FCC",V.DataTable.dtCust(V.Local.iRow).currency!FieldValTrim)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCNT)
+
+'Sales History
+F.Intrinsic.Control.For(V.Local.iCNT,0,V.DataTable.dtARTemp.RowCount--,1)
+	'Get customer name
+	F.Intrinsic.String.Concat("customer = '",V.DataTable.dtARTemp(V.Local.iCNT).CUSTOMER!FieldValTrim,"'",V.Local.sFilter)
+	F.Data.DataTable.Select("dtCust",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.Math.ConvertToLong(V.Local.sRet,V.Local.iRow)
+	V.Local.sCustVen.Set(V.DataTable.dtCust(V.Local.iRow).NAME!FieldValTrim)
+	'Get customer VAT registration ID
+	V.Local.sVATID.Set(V.DataTable.dtCust(V.Local.iRow).ID!FieldValTrim)
+	V.Local.sCountry.Set(V.DataTable.dtCust(V.Local.iRow).COUNTRY!FieldValTrim)
+	V.Local.dInvoiceDate.Set(V.DataTable.dtARTemp(V.Local.iCNT).DATE_INVOICE!FieldVal)
+	
+	'Line number is set to combination of batch no and batch line
+	F.Intrinsic.String.LPad(V.DataTable.dtARTemp(V.Local.iCNT).BATCH_LINE!FieldValTrim,"0",5,V.Local.sBatchLine)
+	F.Intrinsic.String.Concat(V.DataTable.dtARTemp(V.Local.iCNT).BATCH_NUM!FieldValTrim,V.Local.sBatchLine.Trim,V.Local.sLineNo)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtARTemp(V.Local.iCNT).BATCH_CODE!FieldValTrim,=,"12")
+		F.Intrinsic.String.Split(V.DataTable.dtARTemp(V.Local.iCNT).REFERENCE!FieldValTrim,"CM #",V.Local.sInvoice)
+		V.Local.sInvoice.Set(V.Local.sInvoice(1).Trim)
+	F.Intrinsic.Control.Else
+		V.Local.sInvoice.Set(V.DataTable.dtARTemp(V.Local.iCNT).INVOICE!FieldValTrim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("SELECT ORDER_LINE, DESCRIPTION, EXTENSION, EXTENSION_ORDER, TAX_ZONE_1, TAX_ZONE_2, TAX_1, TAX_2, TAX_DESC_1, TAX_DESC_2, TAX_AMT_1, TAX_AMT_2, TAXABLE_TOT_1, TAXABLE_TOT_2, TAX_AMT_1_ORDER, TAX_AMT_2_ORDER, TAXABLE_TOT_1_ORDER, TAXABLE_TOT_2_ORDER, TAX_ZONE_1, TAX_ZONE_2, VAT_RULE_ID FROM V_ORDER_HIST_LINE WHERE INVOICE = '{0}' and LTRIM(ORDER_NO) = '{1}' and ORDER_SUFFIX = '{2}'",V.Local.sInvoice.Trim,V.DataTable.dtARTemp(V.Local.iCNT).ORDER_NO!FieldValTrim,V.DataTable.dtARTemp(V.Local.iCNT).ORDER_SUFFIX!FieldValTrim,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtHistLine","conts",V.Local.sSQL)
+	
+	F.Intrinsic.Control.For(V.Local.iCNT2,0,V.DataTable.dtHistLine.RowCount--,1)
+		F.Intrinsic.Control.If(V.DataTable.dtARTemp(V.Local.iCNT).BATCH_CODE!FieldValTrim,=,"12")
+			F.Intrinsic.String.Concat("Credit Note for ",V.DataTable.dtARTemp(V.Local.iCNT).INVOICE!FieldValTrim,V.Local.sProduct)
+		F.Intrinsic.Control.Else
+			V.Local.sProduct.Set(V.DataTable.dtHistLine(V.Local.iCNT2).DESCRIPTION!FieldValTrim)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Concat(V.DataTable.dtARTemp(V.Local.iCNT).ORDER_NO!FieldValTrim,V.DataTable.dtARTemp(V.Local.iCNT).ORDER_SUFFIX!FieldValTrim,V.DataTable.dtHistLine(V.Local.iCNT2).ORDER_LINE!FieldValTrim,V.Local.sLineNo)
+		F.Intrinsic.Control.If(V.DataTable.dtHistLine(V.Local.iCNT2).VAT_RULE_ID!FieldValLong,=,6)
+			V.Local.sTaxCode.Set(V.DataTable.dtHistLine(V.Local.iCNT2).TAX_1!FieldValTrim)
+			F.Intrinsic.Control.CallSub(checktaxcode,"Zone",V.DataTable.dtHistLine(V.Local.iCNT).TAX_ZONE_1!FieldValTrim,"Auth",V.DataTable.dtHistLine(V.Local.iCNT).TAX_1!FieldValTrim)
+			F.Intrinsic.Control.If(V.Args.iStore,=,1)
+				F.Data.DataTable.AddRow("dtSales","Customer_Name",V.Local.sCustVen.Trim,"Customer_ID",V.Local.sVATID.Trim,"Invoice_Date",V.Local.dInvoiceDate,"Invoice_No",V.Local.sInvoice.Trim,"Invoice_Line",V.Local.sLineNo.Trim,"Product_Desc",V.Local.sProduct,"Sales_Value_Base",V.DataTable.dtHistLine(V.Local.iCNT2).EXTENSION!FieldValFloat,"Sales_GST_Base",0,"Tax_Code",V.Local.sTaxCode.Trim,"Country",V.Local.sCountry,"Sales_Value_FCC",V.DataTable.dtHistLine(V.Local.iCNT2).EXTENSION_ORDER!FieldValFloat,"Sales_GST_FCC",0,"Batch_Num",V.DataTable.dtARTemp(V.Local.iCNT).BATCH_NUM!FieldValTrim,"Batch_Line",V.Local.sBatchLine.Trim)
+				'Update currency
+				F.Intrinsic.Control.If(V.DataTable.dtCust(V.Local.iRow).CURRENCY!FieldValTrim,=,V.Global.sCoCurr.Trim)
+					F.Data.DataTable.SetValue("dtSales",V.DataTable.dtSales.RowCount--,"FCC","XXX")
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.SetValue("dtSales",V.DataTable.dtSales.RowCount--,"FCC",V.DataTable.dtCust(V.Local.iRow).CURRENCY!FieldValTrim)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.sTaxCode.Set(V.DataTable.dtHistLine(V.Local.iCNT2).TAX_1!FieldValTrim)
+			F.Intrinsic.Control.CallSub(checktaxcode,"Zone",V.DataTable.dtHistLine(V.Local.iCNT2).TAX_ZONE_1!FieldValTrim,"Auth",V.DataTable.dtHistLine(V.Local.iCNT2).TAX_1!FieldValTrim)
+			F.Intrinsic.Control.If(V.Args.iStore,=,1)
+				F.Data.DataTable.AddRow("dtSales","Customer_Name",V.Local.sCustVen.Trim,"Customer_ID",V.Local.sVATID.Trim,"Invoice_Date",V.Local.dInvoiceDate,"Invoice_No",V.Local.sInvoice.Trim,"Invoice_Line",V.Local.sLineNo.Trim,"Product_Desc",V.Local.sProduct,"Sales_Value_Base",V.DataTable.dtHistLine(V.Local.iCNT2).EXTENSION!FieldValFloat,"Sales_GST_Base",0,"Tax_Code",V.Local.sTaxCode.Trim,"Country",V.Local.sCountry,"Sales_Value_FCC",V.DataTable.dtHistLine(V.Local.iCNT2).EXTENSION_ORDER!FieldValFloat,"Sales_GST_FCC",0,"Batch_Num",V.DataTable.dtARTemp(V.Local.iCNT).BATCH_NUM!FieldValTrim,"Batch_Line",V.Local.sBatchLine.Trim)
+				F.Intrinsic.Control.If(V.DataTable.dtCust(V.Local.iRow).CURRENCY!FieldValTrim,=,V.Global.sCoCurr.Trim)
+					F.Data.DataTable.SetValue("dtSales",V.DataTable.dtSales.RowCount--,"Sales_Value_FCC",0)
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.SetValue("dtSales",V.DataTable.dtSales.RowCount--,"Sales_Value_FCC",V.DataTable.dtHistLine(V.Local.iCNT2).EXTENSION_ORDER!FieldValFloat)
+				F.Intrinsic.Control.EndIf
+				
+				F.Intrinsic.Control.If(V.DataTable.dtCust(V.Local.iRow).CURRENCY!FieldValTrim,=,V.Global.sCoCurr.Trim)
+					F.Data.DataTable.SetValue("dtSales",V.DataTable.dtSales.RowCount--,"FCC","XXX")
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.SetValue("dtSales",V.DataTable.dtSales.RowCount--,"FCC",V.DataTable.dtCust(V.Local.iRow).CURRENCY!FieldValTrim)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf		
+	F.Intrinsic.Control.Next(V.Local.iCNT2)
+	F.Data.DataTable.Close("dtHistLine")
+F.Intrinsic.Control.Next(V.Local.iCNT)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SalesDetail.End
+
+Program.Sub.GSTOutGrid.Start
+F.Intrinsic.Control.Try
+V.Local.iCNT.Declare
+V.Local.iTRow.Declare
+V.Local.sRet.Declare
+V.Local.sCaption.Declare
+V.Local.fAmtTotal.Declare
+V.Local.fGSTTotal.Declare
+V.Local.sTemp.Declare
+
+F.Data.DataView.Create("dtSales","dvSales",22,"","Customer_Name ASC, Invoice_Date ASC, Invoice_No ASC")
+Gui.fmGSTRpt.GsGridOut.AddGridViewFromDataview("gvSales","dtSales","dvSales")
+
+Gui.fmGSTRpt.GsGridOut.MainView("gvSales")
+
+Gui.fmGSTRpt.GsGridOut.SuspendLayout
+
+'GridView Property
+Gui.fmGSTRpt.GsGridOut.SetGridViewProperty("gvSales","AllowSort",True)
+Gui.fmGSTRpt.GsGridOut.SetGridViewProperty("gvSales","AllowFilter",True)
+
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_Name","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_Name","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_ID","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_ID","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Date","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Date","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_No","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_No","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Product_Desc","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Product_Desc","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_Base","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_Base","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_Base","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_Base","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Tax_Code","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Tax_Code","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Country","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Country","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","FCC","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","FCC","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_FCC","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_FCC","ReadOnly",True)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_FCC","AllowEdit",False)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_FCC","ReadOnly",True)
+'Format cells with number and date
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_Base","DisplayCustomNumeric","###,###,###,##0.00")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_Base","DisplayCustomNumeric","###,###,###,##0.00")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_FCC","DisplayCustomNumeric","###,###,###,##0.00")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_FCC","DisplayCustomNumeric","###,###,###,##0.00")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Date","DisplayCustomDatetime","d")
+'Change header caption
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_Name","Caption","Customer Name")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_ID","Caption","Tax ID")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Date","Caption","Invoice Date")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_No","Caption","Invoice No.")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Line","Caption","Invoice Line")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Product_Desc","Caption","Product Description")
+F.Intrinsic.String.Build("Sales Value {0}",V.Global.sCoCurr.Trim,V.Local.sCaption)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_Base","Caption",V.Local.sCaption)
+F.Intrinsic.String.Build("Sales GST {0}",V.Global.sCoCurr.Trim,V.Local.sCaption)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_Base","Caption",V.Local.sCaption)
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Tax_Code","Caption","Tax Code")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","FCC","Caption","Currency")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_FCC","Caption","Sales Value Forex")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_FCC","Caption","Sales GST Forex")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Batch_Num","Caption","Batch No.")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Batch_Line","Caption","Batch Line")
+'Set the width of every column
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_Name","MinWidth","180")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_ID","MinWidth","100")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Date","MinWidth","90")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_No","MinWidth","100")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Line","MinWidth","120")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Product_Desc","MinWidth","180")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_Base","MinWidth","120")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_Base","MinWidth","100")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Tax_Code","MinWidth","60")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Country","MinWidth","100")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","FCC","MinWidth","60")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_FCC","MinWidth","120")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_FCC","MinWidth","100")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Batch_Num","MinWidth","90")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Batch_Line","MinWidth","90")
+'Make header to center aligned
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_Name","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_ID","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Date","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_No","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Line","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Product_Desc","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_Base","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_Base","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Tax_Code","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Country","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","FCC","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_FCC","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_FCC","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Batch_Num","HeaderHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Batch_Line","HeaderHAlignment","Center")
+'Cell alignment center
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Date","CELLHALIGNMENT","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Tax_Code","CELLHALIGNMENT","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","FCC","CELLHALIGNMENT","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Batch_Num","CellHAlignment","Center")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Batch_Line","CellHAlignment","Center")
+
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Tax_Code","Fixed","Left")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_No","Fixed","Left")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Invoice_Date","Fixed","Left")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Customer_Name","Fixed","Left")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_Value_Base","Fixed","Left")
+Gui.fmGSTRpt.GsGridOut.SetColumnProperty("gvSales","Sales_GST_Base","Fixed","Left")
+
+'Column summary total
+Gui.fmGSTRpt.GsGridOut.AddSummaryItem("gvSales","Sales_Value_Base","SALES_AMT_SUM","SUM","","","##,###,##0.00")
+Gui.fmGSTRpt.GsGridOut.AddSummaryItem("gvSales","Sales_GST_Base","SALES_GST_SUM","SUM","","","##,###,##0.00")
+
+'Gui.fmGSTRpt.GsGridOut.GetRowCount("gvSales",V.Local.iTRow)
+'F.Intrinsic.Math.Sub(V.Local.iTRow,1,V.Local.iTRow)
+'F.Intrinsic.Control.For(V.Local.iCNT,0,V.Local.iTRow,1)
+'	Gui.fmGSTRpt.GsGridOut.GetRowValues("gvSales",V.Local.iCNT,V.Local.sRet)
+'	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'	F.Intrinsic.Control.If(V.Local.sRet(8).Trim,=,"")
+'		Gui.fmGSTRpt.GsGridOut.SetCellAppearance("gvSales",8,V.Local.iCNT,"backcolor",V.Color.Yellow)
+'	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.If(V.Local.sRet(0).Trim,=,"")
+'		Gui.fmGSTRpt.GsGridOut.SetCellAppearance("gvSales",0,V.Local.iCNT,"backcolor",V.Color.Yellow)
+'	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.If(V.Local.sRet(1).Trim,=,"")
+'		Gui.fmGSTRpt.GsGridOut.SetCellAppearance("gvSales",1,V.Local.iCNT,"backcolor",V.Color.Yellow)
+'	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.If(V.Local.sRet(3).Trim,=,"")
+'		Gui.fmGSTRpt.GsGridOut.SetCellAppearance("gvSales",3,V.Local.iCNT,"backcolor",V.Color.Yellow)
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.Next(V.Local.iCNT)
+
+F.Data.DataTable.Compute("dtSales","SUM(Sales_Value_Base)","",V.Local.sTemp)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,=,"")
+	V.Local.fAmtTotal.Set(0)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sTemp,V.Local.fAmtTotal)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Format(V.Local.fAmtTotal,"#,0.00",V.Local.sTemp)
+Gui.fmGSTRpt.txtSV.Text(V.Local.sTemp)
+F.Data.DataTable.Compute("dtSales","SUM(Sales_GST_Base)","",V.Local.sTemp)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,=,"")
+	V.Local.fGSTTotal.Set(0)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sTemp,V.Local.fGSTTotal)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Format(V.Local.fGSTTotal,"#,0.00",V.Local.sTemp)
+Gui.fmGSTRpt.txtSGST.Text(V.Local.sTemp)
+Gui.fmGSTRpt.txtSR.Text(V.DataTable.dtSales.RowCount)
+
+Gui.fmGSTRpt.GsGridOut.ResumeLayout
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GSTOutGrid.End
+
+Program.Sub.CheckTaxCode.Start
+F.Intrinsic.Control.Try
+V.Local.sAuth.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sZone.Declare
+
+V.Local.sAuth.Set(V.Args.Auth)
+V.Local.sZone.Set(V.Args.Zone)
+
+F.Intrinsic.String.Build("Zone = '{0}' and Auth = '{1}'",V.Local.sZone.Trim,V.Local.sAuth.Trim,V.Local.sFilter)
+F.Data.DataTable.Select("dtGST",V.Local.sFilter,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+	F.Intrinsic.Variable.AddRV("iStore",0)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckTaxCode.End
+
+Program.Sub.SetContextMenus.Start
+F.Intrinsic.Control.Try
+
+Gui.fmGSTRpt..ContextMenuCreate("ctxPUR")
+Gui.fmGSTRpt.GsGridIn.ContextMenuAttach("ctxPUR")
+Gui.fmGSTRpt..ContextMenuAddItem("ctxPUR","Export",0,"Export")
+Gui.fmGSTRpt..ContextMenuSetItemEventHandler("ctxPUR","Export","Export")
+
+Gui.fmGSTRpt..ContextMenuCreate("ctxSALE")
+Gui.fmGSTRpt.GsGridOut.ContextMenuAttach("ctxSALE")
+Gui.fmGSTRpt..ContextMenuAddItem("ctxSALE","Export",0,"Export")
+Gui.fmGSTRpt..ContextMenuSetItemEventHandler("ctxSALE","Export","Export")
+
+V.Global.bFirstRun.Set(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.Export.Start
+F.Intrinsic.Control.Try
+V.Local.sFileExport.Declare
+V.Local.bExcel.Declare
+V.Local.sControl.Declare
+V.Local.sEndDate.Declare
+V.Local.sFNAME.Declare
+
+F.Intrinsic.String.Format(V.Global.dEndDate,"YYYY_MM",V.Local.sEndDate)
+
+F.Intrinsic.Control.SelectCase(V.Args.MenuName)
+	F.Intrinsic.Control.Case("CTXPUR")
+		F.Intrinsic.String.Build("GST_Input_{0}.csv",V.Local.sEndDate,V.Local.sFNAME)
+		F.Intrinsic.UI.ShowSaveFileDialog(V.Local.sFNAME,"csv|*.csv","","",V.Local.sFileExport)
+		F.Intrinsic.Control.If(V.Local.sFileExport,<>,"***CANCEL***")
+			Gui.fmGSTRpt.GsGridIn.Export(V.Local.sFileExport,"csv")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("CTXSALE")
+		F.Intrinsic.String.Build("GST_Output_{0}.csv",V.Local.sEndDate,V.Local.sFNAME)
+		F.Intrinsic.UI.ShowSaveFileDialog(V.Local.sFNAME,"csv|*.csv","","",V.Local.sFileExport)
+		F.Intrinsic.Control.If(V.Local.sFileExport,<>,"***CANCEL***")
+			Gui.fmGSTRpt.GsGridOut.Export(V.Local.sFileExport,"csv")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Export.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(DataSetup)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.MX.Start
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Data.DataTable.CreateFromSQL("dtMX","conts","Select * from GCG_5949_GST_ACCTS")
+
+Gui.fmMX.GsGcMX.AddGridviewFromDatatable("gvMX","dtMX")
+Gui.fmMX.GsGcMX.MainView("gvMX")
+
+Gui.fmMX.GsGcMX.SuspendLayout
+
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","ZONE","AllowEdit",False)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","ZONE","ReadOnly",True)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","AUTH","AllowEdit",False)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","AUTH","ReadOnly",True)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","DESCR","AllowEdit",False)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","DESCR","ReadOnly",True)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","GL_ACCT","AllowEdit",False)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","GL_ACCT","ReadOnly",True)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","INPUT","AllowEdit",False)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","INPUT","ReadOnly",True)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","OUTPUT","AllowEdit",False)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","OUTPUT","ReadOnly",True)
+
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","ZONE","Width",30)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","AUTH","Width",30)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","DESCR","Width",80)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","GL_ACCT","Width",40)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","INPUT","Width",30)
+Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","OUTPUT","Width",30)
+
+Gui.fmMX.GsGcMX.ResumeLayout
+
+Gui.fmMX..Show
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.MX.End
+
+Program.Sub.cmdSV_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sZone.Declare
+V.Local.sAuth.Declare
+V.Local.sDesc.Declare
+V.Local.sGLAcct.Declare
+V.Local.bInput.Declare(Boolean,0)
+V.Local.bOutput.Declare(Boolean,0)
+V.Local.sSQL.Declare
+
+V.Local.sZone.Set(V.Screen.fmMX!txtZn.Text.Trim)
+V.Local.sAuth.Set(V.Screen.fmMX!txtAuth.Text.Trim)
+V.Local.sDesc.Set(V.Screen.fmMX!txtDesc.Text.Trim)
+V.Local.sGLAcct.Set(V.Screen.fmMX!txtGLAcct.Text.Trim)
+
+V.Local.bInput.Set(V.Screen.fmMX!chkIn.Value.Long)
+V.Local.bOutput.Set(V.Screen.fmMX!chkOut.Value.Long)
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Intrinsic.String.Build("Select * from GCG_5949_GST_ACCTS where RTRIM(ZONE) = '{0}' and RTRIM(AUTH) = '{1}'",V.Local.sZone,V.Local.sAuth,V.Local.sSQL)
+F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+	F.Intrinsic.String.Build("Insert into GCG_5949_GST_ACCTS (ZONE,AUTH,DESCR,GL_ACCT,INPUT,OUTPUT) values ('{0}','{1}','{2}','{3}',{4},{5})",V.Local.sZone,V.Local.sAuth,V.Local.sDesc,V.Local.sGLAcct,V.Local.bInput.Long,V.Local.bOutput.Long,V.Local.sSQL)
+	F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Update GCG_5949_GST_ACCTS set DESCR = '{2}',GL_ACCT = '{3}',INPUT = {4},OUTPUT = {5} where ZONE = '{0}' and AUTH = '{1}'",V.Local.sZone.Trim,V.Local.sAuth.Trim,V.Local.sDesc.Trim,V.Local.sGLAcct.Trim,V.Local.bInput.Long,V.Local.bOutput.Long,V.Local.sSQL)
+	F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.Close
+
+Gui.fmMX.txtZn.Text("")
+Gui.fmMX.txtAuth.Text("")
+Gui.fmMX.txtDesc.Text("")
+Gui.fmMX.txtGLAcct.Text("")
+Gui.fmMX.chkIn.Value(False)
+Gui.fmMX.chkOut.Value(False)
+
+F.Intrinsic.Control.CallSub(MX)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSV_Click.End
+
+Program.Sub.cmdDel_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sZone.Declare
+V.Local.sAuth.Declare
+V.Local.sSQL.Declare
+
+V.Local.sZone.Set(V.Screen.fmMX!txtZn.Text.Trim)
+V.Local.sAuth.Set(V.Screen.fmMX!txtAuth.Text.Trim)
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+F.Intrinsic.String.Build("Delete GCG_5949_GST_ACCTS where RTRIM(ZONE) = '{0}' and RTRIM(AUTH) = '{1}'",V.Local.sZone.Trim,V.Local.sAuth.Trim,V.Local.sSQL)
+F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+F.ODBC.Connection!conts.Close
+
+Gui.fmMX.txtZn.Text("")
+Gui.fmMX.txtAuth.Text("")
+Gui.fmMX.txtDesc.Text("")
+Gui.fmMX.txtGLAcct.Text("")
+Gui.fmMX.chkIn.Value(False)
+Gui.fmMX.chkOut.Value(False)
+
+F.Intrinsic.Control.CallSub(MX)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDel_Click.End
+
+Program.Sub.ChkBox.Start
+F.Intrinsic.Control.Try
+V.Local.bChkIn.Declare
+V.Local.bChkOut.Declare
+
+V.Local.bChkIn.Set(V.Screen.fmMX!chkIn.Value)
+V.Local.bChkOut.Set(V.Screen.fmMX!chkOut.Value)
+
+F.Intrinsic.Control.SelectCase(V.Args.CONTROLNAME)
+	F.Intrinsic.Control.Case("CHKIN")
+		F.Intrinsic.Control.If(V.Local.bChkIn,=,True)
+			Gui.fmMX.chkOut.Value(False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("CHKOUT")
+		F.Intrinsic.Control.If(V.Local.bChkOut,=,True)
+			Gui.fmMX.chkin.Value(False)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.ChkBox.End
+
+Program.Sub.GsGcMX_RowCellClick.Start
+F.Intrinsic.Control.Try
+V.Local.sZone.Declare
+V.Local.sAuth.Declare
+V.Local.sDesc.Declare
+V.Local.sGLAcct.Declare
+V.Local.bInput.Declare
+V.Local.bOutput.Declare
+
+Gui.fmMX.GsGcMX.GetCellValueByColumnName("gvMX","ZONE",V.Args.RowIndex,V.Local.sZone)
+Gui.fmMX.GsGcMX.GetCellValueByColumnName("gvMX","AUTH",V.Args.RowIndex,V.Local.sAuth)
+Gui.fmMX.GsGcMX.GetCellValueByColumnName("gvMX","DESCR",V.Args.RowIndex,V.Local.sDesc)
+Gui.fmMX.GsGcMX.GetCellValueByColumnName("gvMX","GL_ACCT",V.Args.RowIndex,V.Local.sGLAcct)
+Gui.fmMX.GsGcMX.GetCellValueByColumnName("gvMX","INPUT",V.Args.RowIndex,V.Local.bInput)
+Gui.fmMX.GsGcMX.GetCellValueByColumnName("gvMX","OUTPUT",V.Args.RowIndex,V.Local.bOutput)
+
+Gui.fmMX.txtZn.Text(V.Local.sZone.Trim)
+Gui.fmMX.txtAuth.Text(V.Local.sAuth.Trim)
+Gui.fmMX.txtDesc.Text(V.Local.sDesc.Trim)
+Gui.fmMX.txtGLAcct.Text(V.Local.sGLAcct.Trim)
+Gui.fmMX.chkIn.Value(V.Local.bInput)
+Gui.fmMX.chkOut.Value(V.Local.bOutput)
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGcMX_RowCellClick.End
+
+Program.Sub.SetIcon.Start
+F.Intrinsic.Control.Try
+V.Local.sForm.Declare
+V.Local.bExists.Declare
+V.Local.sIcon.Declare
+V.Local.iCounter.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+    F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+    F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+    F.Intrinsic.Control.If(V.Local.bExists.Not)
+        F.Intrinsic.Control.ExitSub
+    F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.GetFormList(V.Local.sForm)
+F.Intrinsic.String.Split(V.Local.sForm, "*!*", V.Local.sForm)
+
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sForm.UBound, 1)
+    Gui.[V.Local.sForm(V.Local.iCounter)]..Icon(V.Local.sIcon)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetIcon.End
+
+Program.Sub.UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.UnLoad.End
+
+Program.Sub.Error.Start
+V.Local.sError.Declare
+V.Local.iRet.Declare
+V.Local.sSep.Declare
+
+F.Intrinsic.String.Build("-------------------------------------------------------------------------------------",,V.Local.sSep)
+F.Intrinsic.String.Build("({5}-{6}){0}{7}{0}Project: {4}{0}{7}{0}Sub: {1}{0}Error: {2}, {3}", V.Ambient.NewLine, V.Args.SubRoutine, V.Args.eNumber, V.Args.eDescription,V.Caller.ScriptFile,V.Ambient.Date, V.Ambient.Time,V.Local.sSep,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError,"Error",V.Local.iRet)
+Program.Sub.Error.End
